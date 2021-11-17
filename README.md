@@ -1,5 +1,6 @@
-# How Green is Your Plate?
 <img src="https://res.cloudinary.com/dysirhng8/image/upload/v1637161497/greenplate/landing_l6kl6h_gwmaij.png" alt="logo" width="500">
+
+# How Green is Your Plate?
 
 ## Introduction
 
