@@ -4,7 +4,7 @@
 
 ## Introduction
 
-This app is the result of a 10 day group project during the General Assembly Software Engineering Immersive course in 2021. Working with [Victor Liew](https://github.com/luckymouse11) and [Megan Sowa](https://github.com/mesowa), we built a full stack application that uses data from [Our World in Data's Environmental Impacts of Food Production](https://ourworldindata.org/environmental-impacts-of-food#) to calculate the environmental impact of a recipe based on the ingredients chosen.
+This app is the result of a 10 day group project during the General Assembly Software Engineering Immersive course in 2021. Working with [Victor Liew](https://github.com/luckymouse11) and [Megan Sowa](https://github.com/mesowa), we built a full stack MERN (Mongo, Node.js, Express and React) application that uses data from [Our World in Data's Environmental Impacts of Food Production](https://ourworldindata.org/environmental-impacts-of-food#) to calculate the environmental impact of a recipe based on the ingredients chosen.
 
 ## Backend and database
 
@@ -39,10 +39,28 @@ We also were briefed to develop a front end app that would make these requests, 
 
 ## Wireframes for Frontend
 
+In order to really clarify how we wanted the site to work and look for the user, I used Google Jamboard to build really simple wireframes for the site with input from the team as to any specifics they wanted to see. These helped us consider things like how we should build the HTML, in particular: any flexbox properties, the URLS for each route, and the auth routes/what information would require a user to be logged in to view (ie: adding a recipe/logout features in the navbar). We decided we wanted to use Bootstrap to build out some of the basic formatting and ensure key components would sit well within the layout, considering the short amount of time we had for a relatively complex project. These would form the basis for our plans, but some extra features were added and some elements are part of the "to do" plan!
 
-![alt](cat.png)
-![alt](cat.png)
-![alt](cat.png)
+
+### Homepage
+![homepage wireframe](https://res.cloudinary.com/dysirhng8/image/upload/v1637159434/greenplate/Food_emissions_app_1_rksqrh.png)
+### Register Form
+![register form wireframe](https://res.cloudinary.com/dysirhng8/image/upload/v1637159434/greenplate/Food_emissions_app_7_ubildo.png)
+### Login Form
+![login form wireframe](https://res.cloudinary.com/dysirhng8/image/upload/v1637159434/greenplate/Food_emissions_app_6_nde65s.png)
+### User Profile
+![user profile wireframe](https://res.cloudinary.com/dysirhng8/image/upload/v1637159434/greenplate/Food_emissions_app_3_hsqyod.png)
+### All Recipes Index Page
+![all recipes index wireframe](https://res.cloudinary.com/dysirhng8/image/upload/v1637159434/greenplate/Food_emissions_app_2_1_o5akmg.png)
+### Individual Recipe Page
+![recipe page](https://res.cloudinary.com/dysirhng8/image/upload/v1637159434/greenplate/Food_emissions_app_4_p8dnmk.png)
+### Add Recipe Form
+![add recipe form](https://res.cloudinary.com/dysirhng8/image/upload/v1637159434/greenplate/Food_emissions_app_8_rohq9m.png)
+### Individual Environmental Factor Page
+![environmental factor information page](https://res.cloudinary.com/dysirhng8/image/upload/v1637159434/greenplate/Food_emissions_app_5_a4toyd.png)
+### Other Pages Added after initial Wireframe
+
+
 
 ## Planning Process
 
