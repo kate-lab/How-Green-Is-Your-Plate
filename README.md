@@ -4,12 +4,12 @@
 
 ## Contents
 
-- Introduction
-- Planning Process
-- Backend and Database
-- Wireframes and Frontend
-- Tech stack and Installs
-- Finished Product
+- [Introduction](#introduction)
+- [Planning Process](#planning-process)
+- [Backend and Database](#backend-and-database)
+- [Wireframes and Frontend](#wireframes-and-frontend)
+- [Tech Stack and Installs](#tech-stack-and-installs)
+- [Finished Product](#finished-product)
 
 ## Introduction
 
