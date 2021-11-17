@@ -4,12 +4,12 @@
 
 ## Contents
 
-- [Introduction](#introduction)
-- [Planning Process](#planning-process)
-- [Backend and Database](#backend-and-database)
-- [Wireframes and Frontend](#wireframes-and-frontend)
-- [Tech stack and Installs](#tech-stack-and-installs)
-- [Finished Product](#finished-product)
+- Introduction
+- Planning Process
+- Backend and Database
+- Wireframes and Frontend
+- Tech stack and Installs
+- Finished Product
 
 ## Introduction
 
@@ -35,23 +35,26 @@ As part of our brief, the app needed to make C.R.U.D. (create, read, update, del
 
 The CRUD requests we set up were:
 
-RECIPES - 
+### Recipes
+
 - GET all recipes
 - POST recipe
 - DELETE recipe
 - UPDATE recipe
 
-USER - 
+### Users
+
 - POST login (checking via auth)
 - POST new user via register
 - GET user by id
 - GET own user
 
-INGREDIENTS -
-- GET ingredients
+### Ingredients
 
-ENVIRONMENTAL FACTORS -
-- GET factors
+- GET all ingredients
+
+### Environmental Factors
+- GET all factors
 
 We built the backend database and requests entirely as a team - working through the various requests to ensure everything was working, seeded and serving effectively from the backend. We were then briefed to develop a front end app that would make these requests, thinking about the user journey through the app. The site also had to include authorization of a user. For the front end we each focussed on specific components/pages.
 
