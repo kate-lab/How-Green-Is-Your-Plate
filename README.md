@@ -4,16 +4,36 @@
 
 ## Contents
 
-- [Introduction](#introduction)
+- [Overview](#overview)
 - [Planning Process](#planning-process)
 - [Backend and Database](#backend-and-database)
 - [Wireframes and Frontend](#wireframes-and-frontend)
 - [Tech Stack and Installs](#tech-stack-and-installs)
 - [Finished Product](#finished-product)
 
-## Introduction
+## Overview
 
 This app is the result of a 10 day group project during the General Assembly Software Engineering Immersive course in 2021. Working with [Victor Liew](https://github.com/luckymouse11) and [Megan Sowa](https://github.com/mesowa), we built a full stack MERN (Mongo, Node.js, Express and React) application that uses data from [Our World in Data's Environmental Impacts of Food Production](https://ourworldindata.org/environmental-impacts-of-food#) to calculate the environmental impact of a recipe based on the ingredients chosen.
+
+## Brief
+
+
+## Technologies Used and Installs
+
+This project is a full MERN stack application. Built using React frontend, with Bootstrap underpinning the styling, React Select to filter and interact with ingredients, and a Cloudinary image upload handler. The Backend database uses MongoDB, Mongoose, Node.js and Express, with Axios being used to make requests to the API.
+
+To get to the client side: cd client 
+
+Then run:
+- yarn
+- yarn add axios
+- yarn add http-proxy-middleware
+- yarn add react-select
+- yarn add dotenv
+- yarn add react-router-dom
+
+
+To run server: yarn start
 
 
 ## Planning Process
@@ -22,15 +42,15 @@ As part of the planning and delivery process, I took responsibility for setting 
 
 ![trello board](https://res.cloudinary.com/dysirhng8/image/upload/v1637159451/greenplate/Screenshot_2021-09-29_at_17.05.09_1_p2pk6q.png)
 
-Some of the main challenges with project management we discovered were with working as a team on Github, making new branches, dealing with merge conflicts, and remedying issues with branches. We solved these issues by ensuring we kept communicating really clearly, and working as a team to support people making Github pull requests, to boost confidence until we all felt comfortable doing this individually.
+Some of the main challenges with project management we discovered were with working as a team on GitHub, making new branches, dealing with merge conflicts, and remedying issues with branches. We solved these issues by ensuring we kept communicating really clearly, and working as a team to support people making GitHub pull requests, to boost confidence until we all felt comfortable doing this individually.
 
 ## Backend and Database
 
 As part of our brief, the app needed to make C.R.U.D. (create, read, update, delete) operations as Axios requests to our own backend API database (which needed to include embedded and referenced relationships), so our database was made up of:
 
-- User collection - populated with a recipes field as owner as an embedded relationship
-- Ingredient collection - with carbon footprint, water use, etc as referenced relationships
-- Recipe collection - populated with ingredients field (referenced) and User as owner (embedded)
+- User collection - populated with a recipes field as owner as an embedded relationship.
+- Ingredient collection - with carbon footprint, water use, etc as referenced relationships.
+- Recipe collection - populated with ingredients field (referenced) and User as owner (embedded).
 - Environmental factors collection - in future we would like to link to ingredients to show low environmentally impactful ingredients!
 
 The CRUD requests we set up were:
@@ -93,7 +113,7 @@ The recipes index page and individual recipe show page were an area of focus for
 <img src="https://res.cloudinary.com/dysirhng8/image/upload/v1637159434/greenplate/Food_emissions_app_4_p8dnmk.png" alt="recipe page" width="600">
 
 ### Add Recipe Form
-The recipe adding form was my largest piece of work for the project, as it involved tying in two packaged components and also ensuring a form submission to the recipes database was effective. My main challenge here was using a React Select to populate the recipe with ingredients by mapping in the selected choices as an array. I also used a file upload to link to Cloudinary, and soon realised I had to create a .env for the frontend to hold the information/upload preset for upload. this really helped me understand that the frontend and backend apps are seperate functioning apps, and we must treat them as seperate entities that use information from each other! It was a good learning process to ensure that this form ensured the user was creating a viable object to add to the recipes database.
+The recipe adding form was my largest piece of work for the project, as it involved tying in two packaged components and also ensuring a form submission to the recipes database was effective. My main challenge here was using a React Select to populate the recipe with ingredients by mapping in the selected choices as an array. I also used a file upload to link to Cloudinary, and soon realised I had to create a .env for the frontend to hold the information/upload preset for upload. This really helped me understand that the frontend and backend apps are separate functioning apps, and we must treat them as separate entities that use information from each other! It was a good learning process to ensure that this form ensured the user was creating a viable object to add to the recipes database.
 
 <img src="https://res.cloudinary.com/dysirhng8/image/upload/v1637159434/greenplate/Food_emissions_app_8_rohq9m.png" alt="add recipe form" width="600">
 
@@ -105,26 +125,9 @@ The recipe adding form was my largest piece of work for the project, as it invol
 
 Victor also added an "about" page to introduce the project team and Megan made an Environmental Factors Index page to explain why we decided to focus on this subject for our app.
 
-## Tech stack and Installs
-
-This project is a full MERN stack application. Built using React frontend, with Bootstrap underpinning the styling, React Select to filter and interact with ingredients, and a Cloudinary image upload handler. The Backend database uses MongdoDB, Mongoose, Node.js and Express, with Axios being used to make requests to the API.
-
-To get to the client side: cd client 
-
-Then run:
-- yarn
-- yarn add axios
-- yarn add http-proxy-middleware
-- yarn add react-select
-- yarn add dotenv
-- yarn add react-router-dom
-
-
-To run server: yarn start
-
 ## Finished Product
 
-I am really pleased the finished results of our product and how much we achieved within a short time period. This was our first full stack app and it was really exciting to see the project come together and see how the frontend React app interacted with the backend database. 
+I am really pleased with the finished results of our product and how much we achieved within a short time period. This was our first full stack app and it was really exciting to see the project come together and see how the frontend React app interacted with the backend database. 
 
 ### Demo
 
@@ -145,3 +148,22 @@ To Demo the full How Green is Your Plate app, head to our [Heroku hosted site](h
 
 ### user profile
 <img src="https://res.cloudinary.com/dysirhng8/image/upload/v1637166322/greenplate/Screenshot_2021-11-17_at_15.58.21_tzagdt.png" alt="user profile" width="600">
+
+## Project Wins
+
+I feel the key wins for me during this project were:
+
+- learning how to work in a team of people with different areas of strength.
+- pulling together a project management strategy and ensuring we reached a really slick looking MVP.
+- creating a product which I feel has a real tangible use in the real world and is something really mission driven.
+
+## Project Challenges and Key Learnings
+
+Rectifying issues with GitHub pull requests being made to incorrect branches - this was solved by bringing the team together and running through the process as a group so as not to let any mistakes happen. This was an opportunity for me to practice my coaching skills and support members of the team.
+Just working with a larger codebase for the first time was a challenge for me - I tend to struggle to work on one thing at once, so had to be really strict with myself and compartmentalise features, closing all other component files and working on one feature on a single branch.
+
+## Bugs and Future Features
+
+There are some small bugs when loading the deployed Heroku site on a slower connection as it doesn’t load the database of recipes at first sometimes. On reload it seems to be fine.
+A future feature I would like to implement would be a more precise recipe calculator that allows users to input the exact amount of an ingredient to calculate an exact environmental impact of a recipe.
+I also would like to add the individual user’s own average environmental impact based on the recipes they have added to the site - this would be displayed on the user page.
