@@ -5,17 +5,31 @@
 ## Contents
 
 - [Overview](#overview)
+- [Brief](#brief)
+- [Technologies Used and Installs](#technologies-used-and-installs)
 - [Planning Process](#planning-process)
 - [Backend and Database](#backend-and-database)
 - [Wireframes and Frontend](#wireframes-and-frontend)
-- [Tech Stack and Installs](#tech-stack-and-installs)
 - [Finished Product](#finished-product)
+- [Project Wins](#project-wins)
+- [Project Challenges and Key Learnings](#project-challenges-and-key-learnings)
+- [Bugs and Future Features](#bugs-and-future-features)
 
 ## Overview
 
 This app is the result of a 10 day group project during the General Assembly Software Engineering Immersive course in 2021. Working with [Victor Liew](https://github.com/luckymouse11) and [Megan Sowa](https://github.com/mesowa), we built a full stack MERN (Mongo, Node.js, Express and React) application that uses data from [Our World in Data's Environmental Impacts of Food Production](https://ourworldindata.org/environmental-impacts-of-food#) to calculate the environmental impact of a recipe based on the ingredients chosen.
 
 ## Brief
+
+Our brief for this project was to:
+
+* **Build a full-stack application** by making your own backend and your own front-end
+* **Use an Express API** to serve your data from a Mongo database
+* **Consume your API with a separate front-end** built with React
+* **Be a complete product** which most likely means multiple relationships and CRUD functionality for at least a couple of models
+* **Implement thoughtful user stories/wireframes** that are significant enough to help you know which features are core MVP and which you can cut
+* **Have a visually impressive design** to kick your portfolio up a notch and have something to wow future clients & employers. **ALLOW** time for this.
+* **Be deployed online** so it's publicly accessible.
 
 
 ## Technologies Used and Installs
