@@ -167,9 +167,9 @@ To Demo the full How Green is Your Plate app, head to our [Heroku hosted site](h
 
 I feel the key wins for me during this project were:
 
-- learning how to work in a team of people with different areas of strength.
-- pulling together a project management strategy and ensuring we reached a really slick looking MVP.
-- creating a product which I feel has a real tangible use in the real world and is something really mission driven.
+- Learning how to work in a team of people with different areas of strength.
+- Pulling together a project management strategy and ensuring we reached a really slick looking MVP.
+- Creating a product which I feel has a real tangible use in the real world and is something really mission driven.
 
 ## Project Challenges and Key Learnings
 
