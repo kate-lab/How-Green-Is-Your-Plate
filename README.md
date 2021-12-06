@@ -103,12 +103,53 @@ We kept this page quite simple, and were lucky enough that Megan's brother desig
 <img src="https://res.cloudinary.com/dysirhng8/image/upload/v1637159434/greenplate/Food_emissions_app_1_rksqrh.png" alt="homepage wireframe" width="600">
 
 ### Register Form
-Registration and Auth routes were one of my initial focusses for the project - for User registration, I created a form that made a create operation to the User database, using a JWT and a .env file to save a secure password to the database.
+Registration and Auth routes were one of my initial focusses for the project - for User registration, I created a form that made a create operation to the User database, hashing via a JWT and a secret key in an .env file to save a secure password to the database.
+
+In the backend userSchema making hashing the password using bcrypt as part of the registration process:
+
+```
+userSchema
+  .pre('save', function(next){
+    if (this.isModified('password')){
+      this.password = bcrypt.hashSync(this.password, bcrypt.genSaltSync())
+    }
+    next()
+  })
+```
+
+And in the front end, submitting the new user to the user database using an axios request:
+
+```
+  const handleSubmit = async(event) =>{
+    event.preventDefault()
+    try {
+      await axios.post('/api/register', formData)
+      history.push('/login')
+    } catch (err){
+      setErrors(err.response.data.errors)
+    }
+  }
+```
 
 <img src="https://res.cloudinary.com/dysirhng8/image/upload/v1637159434/greenplate/Food_emissions_app_7_ubildo.png" alt="register form wireframe" width="600">
 
 ### Login Form
-I also created the Login form, which validated the input password with a backend auth helper and created a token that could then be used to check if the user was authorised to post a recipe/see the logout option in the navbar.
+I also created the Login form, which validated the input password with a backend auth helper and created a token that could then be used to check if the user was authorised to post a recipe/see the logout option in the navbar. In the backend this was acheived through the async loginUser function:
+
+```
+    const userToLogin = await User.findOne({ email: req.body.email })
+    console.log('User to login ->', userToLogin)
+    console.log('Password is a match: ', userToLogin.validatePassword(req.body.password))
+    if (!userToLogin || !userToLogin.validatePassword(req.body.password)){
+      throw new Error()
+    }
+    const token = jwt.sign({ sub: userToLogin._id }, process.env.secret, { expiresIn: '7 days' })
+    console.log('TOKEN ->', token)
+    return res.status(200).json({
+      message: `Welcome back ${userToLogin.username}`,
+      token
+    })
+```
 
 <img src="https://res.cloudinary.com/dysirhng8/image/upload/v1637159434/greenplate/Food_emissions_app_6_nde65s.png" alt="login form wireframe" width="600">
 
@@ -127,7 +168,30 @@ The recipes index page and individual recipe show page were an area of focus for
 <img src="https://res.cloudinary.com/dysirhng8/image/upload/v1637159434/greenplate/Food_emissions_app_4_p8dnmk.png" alt="recipe page" width="600">
 
 ### Add Recipe Form
-The recipe adding form was my largest piece of work for the project, as it involved tying in two packaged components and also ensuring a form submission to the recipes database was effective. My main challenge here was using a React Select to populate the recipe with ingredients by mapping in the selected choices as an array. I also used a file upload to link to Cloudinary, and soon realised I had to create a .env for the frontend to hold the information/upload preset for upload. This really helped me understand that the frontend and backend apps are separate functioning apps, and we must treat them as separate entities that use information from each other! It was a good learning process to ensure that this form ensured the user was creating a viable object to add to the recipes database.
+The recipe adding form was my largest piece of work for the project, as it involved tying in two packaged components and also ensuring a form submission to the recipes database was effective. My main challenge here was using a React Select to populate the recipe with ingredients by mapping in the selected choices as an array through a handleMultiSelected function:
+
+```
+const handleMultiSelected = (selected) => {
+    console.log('selected ->', selected)
+    const selectedIngredients = selected ? selected.map(item => item.id) : []
+    setFormData({ ...formData, ingredients: selectedIngredients })
+    setErrors({ ...errors, ingredients: 'ingredient not chosen' })
+  }
+```
+
+I also used a file upload to link to Cloudinary, and soon realised I had to create a .env for the frontend to hold the information/upload preset for upload:
+
+```
+  const handleImageChange = async (e) => {
+    const dataToSend = new FormData()
+    dataToSend.append('file', e.target.files[0])
+    dataToSend.append('upload_preset', process.env.REACT_APP_CLOUDINARY_UPLOAD_PRESET)
+    const { data } = await axios.post(process.env.REACT_APP_CLOUDINARY_URL, dataToSend)
+    setFormData({ ...formData, image: data.url })
+    setErrors({ ...errors, image: 'image not added' })
+  }
+```
+This really helped me understand that the frontend and backend apps are separate functioning apps, and we must treat them as separate entities that use information from each other! It was a good learning process to ensure that this form ensured the user was creating a viable object to add to the recipes database.
 
 <img src="https://res.cloudinary.com/dysirhng8/image/upload/v1637159434/greenplate/Food_emissions_app_8_rohq9m.png" alt="add recipe form" width="600">
 
